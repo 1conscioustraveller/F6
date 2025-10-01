@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Élégance | Fine Art Photography</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --cream: #FAF9F7;
+      --blush: #E9CFCB;
+      --sage: #C8D5C0;
+      --charcoal: #1a1a1a;
+      --champagne: #D4B483;
+      --gold: #C5A572;
+      --dark-gold: #A88B5F;
+      --ivory: #F5F3EF;
+      --light-grey: #E8E6E1;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background-color: var(--cream);
+      color: var(--charcoal);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      margin-top: 0;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .script {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.2rem;
+      color: var(--gold);
+      line-height: 1.2;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    .centered-title {
+      text-align: center;
+    }
+
+    .centered-title:after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    a.button {
+      display: inline-block;
+      padding: 1em 2.2em;
+      background-color: transparent;
+      color: var(--charcoal);
+      text-decoration: none;
+      border: 2px solid var(--gold);
+      border-radius: 0;
+      transition: all 0.4s ease;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    a.button:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--gold);
+      transition: all 0.4s ease;
+      z-index: -1;
+    }
+
+    a.button:hover {
+      color: white;
+    }
+
+    a.button:hover:before {
+      left: 0;
+    }
+
+    .button-light {
+      color: white;
+      border-color: white;
+    }
+
+    .button-light:before {
+      background: white;
+    }
+
+    .button-light:hover {
+      color: var(--charcoal);
+    }
+
+    section {
+      padding: 6em 2em;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 12em 2em;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero .button {
+      margin: 0 0.5rem;
+    }
+
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 4em;
+      position: relative;
+    }
+
+    .about-image {
+      flex: 1;
+      min-width: 300px;
+      position: relative;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 5px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+
+    .about-image:before {
+      content: '';
+      position: absolute;
+      width: 80%;
+      height: 80%;
+      border: 2px solid var(--gold);
+      top: -20px;
+      left: -20px;
+      z-index: -1;
+    }
+
+    .about-content {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .about-content h2 {
+      margin-bottom: 1.5rem;
+    }
+
+    .about-content p {
+      margin-bottom: 1.5rem;
+    }
+
+    .signature {
+      margin-top: 2rem;
+      text-align: right;
+    }
+
+    .portfolio {
+      background-color: var(--ivory);
+      position: relative;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5em;
+      margin-top: 3em;
+    }
+
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      aspect-ratio: 4/5;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .portfolio-item-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.5em;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .portfolio-item:hover .portfolio-item-overlay {
+      opacity: 1;
+    }
+
+    .portfolio-item-category {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .portfolio-item-desc {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    .experience {
+      text-align: center;
+    }
+
+    .experience-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3em;
+      margin-top: 4em;
+    }
+
+    .experience-step {
+      padding: 2em 1em;
+      position: relative;
+    }
+
+    .step-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      color: var(--light-grey);
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: -1;
+    }
+
+    .step-icon {
+      font-size: 2.5rem;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .testimonials {
+      background-color: var(--light-grey);
+    }
+
+    .testimonial-slider {
+      max-width: 800px;
+      margin: 3em auto 0;
+      position: relative;
+    }
+
+    .testimonial {
+      background-color: white;
+      padding: 3em;
+      border-radius: 5px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      text-align: center;
+      position: relative;
+    }
+
+    .testimonial:before {
+      content: """;
+      font-family: 'Playfair Display', serif;
+      font-size: 6rem;
+      color: var(--gold);
+      position: absolute;
+      top: -20px;
+      left: 20px;
+      opacity: 0.2;
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .testimonial-author {
+      font-weight: 700;
+      color: var(--charcoal);
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 3em auto 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5em;
+    }
+
+    .form-group {
+      margin-bottom: 1.5em;
+    }
+
+    .form-group-full {
+      grid-column: 1 / -1;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 1em;
+      border: 1px solid var(--light-grey);
+      background: white;
+      font-family: 'Lato', sans-serif;
+      transition: all 0.3s ease;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    footer {
+      background: var(--charcoal);
+      color: white;
+      padding: 4em 2em 2em;
+    }
+
+    .footer-content {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3em;
+      margin-bottom: 3em;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-about p {
+      opacity: 0.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1em;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .footer-heading {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 1.5rem;
+      font-size: 1.2rem;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.8em;
+    }
+
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 2em;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.9rem;
+      opacity: 0.6;
+    }
+
+    /* Navigation */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1.5em 2em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      transition: all 0.4s ease;
+    }
+
+    .navbar.scrolled {
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      padding: 1em 2em;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+    }
+
+    .navbar.scrolled .logo {
+      color: var(--charcoal);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2em;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    .navbar.scrolled .nav-links a {
+      color: var(--charcoal);
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .navbar.scrolled .mobile-menu-btn {
+      color: var(--charcoal);
+    }
+
+    /* Lightbox Styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.95);
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+      padding: 2em;
+    }
+
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 90%;
+      position: relative;
+    }
+
+    .lightbox img {
+      max-width: 100%;
+      max-height: 90vh;
+      border-radius: 5px;
+      box-shadow: 0 0 40px rgba(0,0,0,0.5);
+    }
+
+    .lightbox .close,
+    .lightbox .prev,
+    .lightbox .next {
+      position: absolute;
+      background: rgba(0,0,0,0.5);
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      border-radius: 50%;
+    }
+
+    .lightbox .close:hover,
+    .lightbox .prev:hover,
+    .lightbox .next:hover {
+      background: rgba(0,0,0,0.8);
+    }
+
+    .lightbox .close {
+      top: -60px;
+      right: 0;
+    }
+
+    .lightbox .prev {
+      top: 50%;
+      left: -60px;
+      transform: translateY(-50%);
+    }
+
+    .lightbox .next {
+      top: 50%;
+      right: -60px;
+      transform: translateY(-50%);
+    }
+
+    .lightbox-caption {
+      color: white;
+      text-align: center;
+      margin-top: 1em;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero p {
+        font-size: 1.1rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(255,255,255,0.95);
+        flex-direction: column;
+        padding: 2em;
+        text-align: center;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      }
+      
+      .nav-links.active {
+        display: flex;
+      }
+      
+      .nav-links a {
+        color: var(--charcoal);
+        padding: 1em 0;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .contact-form {
+        grid-template-columns: 1fr;
+      }
+      
+      .lightbox .prev {
+        left: 10px;
+      }
+      
+      .lightbox .next {
+        right: 10px;
+      }
+      
+      .lightbox .close {
+        top: 10px;
+        right: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="#" class="logo">Élégance</a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="mobile-menu-btn">
+      <i class="fas fa-bars"></i>
+    </button>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Timeless Photography for Discerning Souls</h1>
+      <p>Where artistry meets emotion, creating heirlooms that transcend generations.</p>
+      <a href="#portfolio" class="button button-light">View Portfolio</a>
+      <a href="#contact" class="button button-light">Begin Your Journey</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="about-image">
+      <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=772&q=80" alt="Photographer Portrait">
+    </div>
+    <div class="about-content">
+      <h2 class="section-title">The Artist Behind the Lens</h2>
+      <p>With over a decade of experience in fine art photography, I specialize in capturing the profound beauty of life's most precious moments. My approach blends technical precision with artistic intuition, creating imagery that feels both timeless and intimately personal.</p>
+      <p>Each photograph is a collaboration — a delicate dance between light, emotion, and composition. I believe in crafting not just images, but visual legacies that will be cherished for generations.</p>
+      <p class="script">Let us create something extraordinary together.</p>
+      <div class="signature">
+        <p class="script">Isabelle Laurent</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section class="portfolio" id="portfolio">
+    <h2 class="section-title centered-title">The Art of Moments</h2>
+    <p style="text-align: center; max-width: 700px; margin: 0 auto;">A curated collection of visual narratives that celebrate love, connection, and the exquisite beauty of life's milestones.</p>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Wedding Photography">
+        <div class="portfolio-item-overlay">
+          <div class="portfolio-item-category">Bridal Portraits</div>
+          <div class="portfolio-item-desc">Elegant and timeless bridal imagery</div>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Couple Photography">
+        <div class="portfolio-item-overlay">
+          <div class="portfolio-item-category">Engagement</div>
+          <div class="portfolio-item-desc">Intimate moments of connection</div>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1537633552985-df8f916c5c3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Lifestyle Photography">
+        <div class="portfolio-item-overlay">
+          <div class="portfolio-item-category">Editorial</div>
+          <div class="portfolio-item-desc">Artful lifestyle compositions</div>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1445905595283-21f8ae8a33d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1772&q=80" alt="Wedding Details">
+        <div class="portfolio-item-overlay">
+          <div class="portfolio-item-category">Details</div>
+          <div class="portfolio-item-desc">The art in the details</div>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Family Photography">
+        <div class="portfolio-item-overlay">
+          <div class="portfolio-item-category">Family</div>
+          <div class="portfolio-item-desc">Generational connections</div>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1537633487081-89589eeb79df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Fine Art Photography">
+        <div class="portfolio-item-overlay">
+          <div class="portfolio-item-category">Fine Art</div>
+          <div class="portfolio-item-desc">Conceptual and artistic imagery</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section class="experience" id="experience">
+    <h2 class="section-title centered-title">The Élégance Experience</h2>
+    <p style="max-width: 700px; margin: 0 auto;">A bespoke journey designed for those who appreciate the art of photography and seek an exceptional, personalized experience from conception to delivery.</p>
+    <div class="experience-steps">
+      <div class="experience-step">
+        <div class="step-number">01</div>
+        <div class="step-icon"><i class="fas fa-glass-cheers"></i></div>
+        <h3>Initial Consultation</h3>
+        <p>We begin with an intimate conversation to understand your vision, style, and aspirations for your photography experience.</p>
+      </div>
+      <div class="experience-step">
+        <div class="step-number">02</div>
+        <div class="step-icon"><i class="fas fa-pen-fancy"></i></div>
+        <h3>Creative Direction</h3>
+        <p>Together, we craft a personalized concept, selecting locations, styling, and artistic approaches that reflect your unique story.</p>
+      </div>
+      <div class="experience-step">
+        <div class="step-number">03</div>
+        <div class="step-icon"><i class="fas fa-camera"></i></div>
+        <h3>The Session</h3>
+        <p>Experience a seamless, joyful photoshoot where you can be fully present while I capture authentic, emotion-filled moments.</p>
+      </div>
+      <div class="experience-step">
+        <div class="step-number">04</div>
+        <div class="step-icon"><i class="fas fa-gem"></i></div>
+        <h3>Artisan Delivery</h3>
+        <p>Receive your curated collection of heirloom-quality images, presented in bespoke packaging designed to be treasured.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials" id="testimonials">
+    <h2 class="section-title centered-title">Client Testimonials</h2>
+    <div class="testimonial-slider">
+      <div class="testimonial">
+        <div class="testimonial-text">
+          "Isabelle possesses an extraordinary ability to capture not just images, but the very essence of a moment. Our wedding photos are more than photographs; they are tangible memories that transport us back to the emotions of that day. Her artistic eye and gentle guidance made the entire experience magical."
+        </div>
+        <div class="testimonial-author">— Alexander & Sophia Kensington</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <h2 class="section-title centered-title">Begin Your Journey</h2>
+    <p style="max-width: 700px; margin: 0 auto;">I accept a limited number of commissions each year to ensure every client receives my full attention and dedication. For inquiries regarding availability and investment, please complete the form below.</p>
+    
+    <form class="contact-form">
+      <div class="form-group">
+        <input type="text" placeholder="Your Name" required>
+      </div>
+      <div class="form-group">
+        <input type="email" placeholder="Your Email" required>
+      </div>
+      <div class="form-group form-group-full">
+        <input type="text" placeholder="Event Type">
+      </div>
+      <div class="form-group form-group-full">
+        <input type="text" placeholder="Event Date">
+      </div>
+      <div class="form-group form-group-full">
+        <textarea placeholder="Tell me about your vision..."></textarea>
+      </div>
+      <div class="form-group form-group-full">
+        <button type="submit" class="button" style="width: 100%;">Submit Inquiry</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-about">
+        <div class="footer-logo">Élégance</div>
+        <p>Fine art photography for those who appreciate beauty, craftsmanship, and the creation of lasting visual legacies.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h3 class="footer-heading">Navigation</h3>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3 class="footer-heading">Services</h3>
+        <ul>
+          <li><a href="#">Wedding Photography</a></li>
+          <li><a href="#">Engagement Sessions</a></li>
+          <li><a href="#">Fine Art Portraiture</a></li>
+          <li><a href="#">Editorial Projects</a></li>
+          <li><a href="#">Album Design</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h3 class="footer-heading">Contact</h3>
+        <ul>
+          <li><i class="fas fa-envelope"></i> isabelle@elegancephoto.com</li>
+          <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+          <li><i class="fas fa-map-marker-alt"></i> Based in New York & Paris</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© 2023 Élégance Fine Art Photography. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="close" id="lightboxClose">&times;</button>
+    <button class="prev" id="lightboxPrev">&#10094;</button>
+    <div class="lightbox-content">
+      <img id="lightboxImg" src="" alt="Expanded view">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+    <button class="next" id="lightboxNext">&#10095;</button>
+  </div>
+
+  <script>
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Lightbox functionality
+    const portfolioItems = document.querySelectorAll('.portfolio-item img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const closeBtn = document.getElementById('lightboxClose');
+    const prevBtn = document.getElementById('lightboxPrev');
+    const nextBtn = document.getElementById('lightboxNext');
+
+    let currentIndex = 0;
+    let images = [];
+    let captions = [];
+
+    portfolioItems.forEach((img, index) => {
+      images.push(img.src);
+      const caption = img.parentElement.querySelector('.portfolio-item-category').textContent;
+      captions.push(caption);
+      
+      img.addEventListener('click', () => {
+        currentIndex = index;
+        lightboxImg.src = img.src;
+        lightboxCaption.textContent = caption;
+        lightbox.style.display = 'flex';
+      });
+    });
+
+    closeBtn.addEventListener('click', () => lightbox.style.display = 'none');
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      lightboxImg.src = images[currentIndex];
+      lightboxCaption.textContent = captions[currentIndex];
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      lightboxImg.src = images[currentIndex];
+      lightboxCaption.textContent = captions[currentIndex];
+    });
+
+    // Close on background click
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) lightbox.style.display = 'none';
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (lightbox.style.display === 'flex') {
+        if (e.key === 'ArrowLeft') prevBtn.click();
+        if (e.key === 'ArrowRight') nextBtn.click();
+        if (e.key === 'Escape') closeBtn.click();
+      }
+    });
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
